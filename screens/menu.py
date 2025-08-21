@@ -6,6 +6,7 @@ from textual.widgets import Static, Header, Footer
 
 
 class Menu(Screen):
+    """Class representing the menu screen"""
 
     CSS_PATH = "../tcss/menu.tcss"
 
@@ -40,13 +41,13 @@ class Menu(Screen):
                     )
 
     async def action_see_tasks(self):
-        self.app.push_screen("tasks")
+        await self.app.push_screen("tasks")
 
     async def action_add_remove(self):
-        self.app.push_screen("add_remove")
+        await self.app.push_screen("add_remove")
 
     async def action_about_me(self):
-        self.app.push_screen("about")
+        await self.app.push_screen("about")
 
     async def action_quit_app(self):
         self.app.exit()

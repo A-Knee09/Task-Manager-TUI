@@ -1,10 +1,6 @@
-from textual.app import App, ComposeResult
-from textual import events
-from textual.widget import Widget
-from textual.widgets import Static, Header, Footer
-from textual.containers import Horizontal, Vertical
-
+from textual.app import App
 from screens.menu import Menu
+from screens.about import About
 
 
 class TaskManager(App):
@@ -20,7 +16,7 @@ class TaskManager(App):
         self.install_screen(Menu(), name="menu")
         # self.install_screen(Tasks(), name="tasks")
         # self.install_screen(AddRemove(), name="add_remove")
-        # self.install_screen(About(), name="about")
+        self.install_screen(About(), name="about")
 
         # On starting the app pushing the menu screen
         self.push_screen("menu")
