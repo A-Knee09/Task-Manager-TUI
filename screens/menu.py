@@ -1,21 +1,25 @@
 import pyfiglet as pf
 from textual.app import App, ComposeResult
-from textual.containers import Container, HorizontalScroll, Vertical, Horizontal
-from textual.widgets import Static
+from textual.screen import Screen
+from textual.containers import Container, Vertical, Horizontal
+from textual.widgets import Static, Header, Footer
 
 
-class Menu(App):
+class Menu(Screen):
 
     CSS_PATH = "../tcss/menu.tcss"
 
     BINDINGS = [
         ("t", "see_tasks", "Goes to the tasks"),
-        ("r", "add_remove_tasks", "Add and remove tasks screens"),
-        ("a", "about_me", "Stuff about me and the app"),
-        ("q", "quit_app", "quits the app"),
+        ("r", "add_remove_tasks", "Add or Remove tasks"),
+        ("a", "about_me", "Some Yap about me"),
+        ("q", "quit_app", "Quit the app"),
     ]
 
     def compose(self) -> ComposeResult:
+
+        yield Header()
+        yield Footer()
 
         with Container(id="menu_container"):
             with Horizontal(id="menu_title"):
@@ -35,8 +39,14 @@ class Menu(App):
                         f"{icon}  {option:<50} [bold orange]{key}[/bold orange]\n"
                     )
 
+    async def action_see_tasks(self):
+        self.app.push_screen("tasks")
 
-if __name__ == "__main__":
+    async def action_add_remove(self):
+        self.app.push_screen("add_remove")
 
-    menu = Menu()
-    menu.run()
+    async def action_about_me(self):
+        self.app.push_screen("about")
+
+    async def action_quit_app(self):
+        self.app.exit()
