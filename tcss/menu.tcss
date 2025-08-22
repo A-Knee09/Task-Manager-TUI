@@ -1,5 +1,6 @@
 Screen {
     align: center middle;
+    background: #0d1117;
 }
 
 #menu_container {

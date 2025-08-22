@@ -12,7 +12,6 @@ class Menu(Screen):
 
     BINDINGS = [
         ("t", "see_tasks", "Goes to the tasks"),
-        ("r", "add_remove_tasks", "Add or Remove tasks"),
         ("a", "about_me", "Some Yap about me"),
         ("q", "quit_app", "Quit the app"),
     ]
@@ -27,10 +26,9 @@ class Menu(Screen):
                 ascii_title = pf.figlet_format("TUI Task Manager", font="larry3d")
                 yield Static(ascii_title)
 
-            icons = ["", "", "", "󰩈"]
+            icons = ["", "", "󰩈"]
             menu_items = [
                 ("See tasks", "t"),
-                ("Add/Remove Tasks", "r"),
                 ("About Me", "a"),
                 ("Quit", "q"),
             ]

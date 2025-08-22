@@ -1,7 +1,10 @@
+#Screen{
+  background: #0d1117;
+}
 #about_me {
     layer: above;
     align: center middle;
-    border: double white;
+    border: double #00d4aa;
     layout: grid;
     grid-size: 2 1;
     width: 50%;

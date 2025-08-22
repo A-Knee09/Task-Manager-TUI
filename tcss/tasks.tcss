@@ -1,0 +1,16 @@
+#tasks_container {
+  layout: vertical;
+  align: center middle;
+  width: 40%;
+  height: auto;
+  border: double $accent;
+}
+
+#title{
+  padding: 1;
+  text-align: center;
+
+}
+#table{
+  border: hkey cornflowerblue
+}

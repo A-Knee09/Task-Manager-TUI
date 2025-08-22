@@ -1,6 +1,7 @@
 from textual.app import App
 from screens.menu import Menu
 from screens.about import About
+from screens.tasks import Tasks
 
 
 class TaskManager(App):
@@ -14,12 +15,14 @@ class TaskManager(App):
 
         # Registering all the screens
         self.install_screen(Menu(), name="menu")
-        # self.install_screen(Tasks(), name="tasks")
+        self.install_screen(Tasks(), name="tasks")
         # self.install_screen(AddRemove(), name="add_remove")
         self.install_screen(About(), name="about")
 
         # On starting the app pushing the menu screen
         self.push_screen("menu")
+
+        self.title = "Task Manager App"
 
 
 if __name__ == "__main__":
