@@ -1,3 +1,9 @@
+"""
+Note for me:
+self.data_table.cursor_coordinate → current cell's coordinate (row, column).
+coordinate_to_cell_key() → maps that coordinate to the actual row key and column key in the DataTable.
+"""
+
 from textual.app import ComposeResult
 from textual.widgets import Static, DataTable, Header, Footer, Input, Checkbox
 from textual.screen import Screen
@@ -12,6 +18,7 @@ class Tasks(Screen):
     BINDINGS = [
         ("a", "add_tasks", "Add a task"),
         ("r", "remove_tasks", "Remove a task"),
+        ("u", "update_task", "Update a task"),
         ("m", "menu", "Menu"),
         ("q", "quit", "Quit"),
     ]
@@ -59,6 +66,12 @@ class Tasks(Screen):
 
     async def action_menu(self) -> None:
         await self.app.push_screen("menu")
+
+    async def action_remove_tasks(self) -> None:
+        row_key, _ = self.data_table.coordinate_to_cell_key(
+            self.data_table.cursor_coordinate
+        )
+        self.data_table.remove_row(row_key)
 
     async def action_quit(self):
         self.app.exit()
