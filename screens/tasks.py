@@ -16,7 +16,8 @@ class Tasks(Screen):
     CSS_PATH = "../tcss/tasks.tcss"
     BINDINGS = [
         ("a", "add_tasks", "Add a task"),
-        ("r", "remove_tasks", "Remove a task"),
+        ("d", "remove_tasks", "Delete a task"),
+        ("c", "clear_table", "Delete all task"),
         ("u", "update_task", "Update a task"),
         ("m", "menu", "Menu"),
         ("q", "quit", "Quit"),
@@ -30,7 +31,7 @@ class Tasks(Screen):
         with Container(id="tasks_container"):
 
             yield Static(
-                "[b][cornflowerblue]TUI Task Manager - Tasks[/cornflowerblue][/b]",
+                "[b]TUI Task Manager - Tasks[/b]",
                 id="title",
             )
 
@@ -38,7 +39,7 @@ class Tasks(Screen):
             self.data_table = DataTable(id="table")
             self.data_table.add_columns("Task No.", "Task")
             self.data_table.cursor_type = "cell"
-            self.data_table.cell_padding = 17
+            self.data_table.cell_padding = 10
             # self.data_table.zebra_stripes = True
 
             yield self.data_table
@@ -82,10 +83,28 @@ class Tasks(Screen):
 
     async def action_remove_tasks(self):
         """Remove selected task"""
-        row_key, _ = self.data_table.coordinate_to_cell_key(
-            self.data_table.cursor_coordinate
-        )
-        self.data_table.remove_row(row_key)
+        try:
+            if self.data_table.row_count == 0:
+                return  # Nothing to remove
+
+            row_key, _ = self.data_table.coordinate_to_cell_key(
+                self.data_table.cursor_coordinate
+            )
+            self.data_table.remove_row(row_key)
+
+        except KeyError:
+            pass
+
+    async def action_clear_table(self):
+        """Delete all values of the Table"""
+        try:
+            if self.data_table.row_count == 0:
+                return
+
+            self.data_table.clear()
+
+        except KeyError:
+            pass
 
     async def action_menu(self) -> None:
         await self.app.push_screen("menu")

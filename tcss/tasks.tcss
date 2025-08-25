@@ -5,7 +5,7 @@ Screen{
 #tasks_container {
   layout: vertical;
   align: center middle;
-  width: 58%;
+  width: 60%;
   height: auto;
   border: round darkslategray;
 }
@@ -13,6 +13,7 @@ Screen{
 #title{
   padding: 1;
   text-align: center;
+  color: $accent;
 
 }
 #table{
