@@ -31,7 +31,7 @@ class About(Screen):
         """
 
         self.styles.background = "#0d1117"
-        yield Header()
+        # yield Header()
         yield Footer()
         yield Container(id="shadow")
 

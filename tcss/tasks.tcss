@@ -1,9 +1,13 @@
+Screen{
+  background: black;
+}
+
 #tasks_container {
   layout: vertical;
   align: center middle;
-  width: 40%;
+  width: 58%;
   height: auto;
-  border: double $accent;
+  border: round darkslategray;
 }
 
 #title{
@@ -12,5 +16,6 @@
 
 }
 #table{
-  border: hkey cornflowerblue
+  border: hkey cadetblue;
+  background: black;
 }
