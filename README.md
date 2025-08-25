@@ -1,4 +1,4 @@
-# Task List TUI (WIP)
+# To Do List TUI (WIP)
 
 A terminal-based task management application built with [Textual](https://textual.textualize.io/).  
 Currently in development – core features like adding, updating, and removing tasks are functional, with more planned.
@@ -13,7 +13,8 @@ Currently in development – core features like adding, updating, and removing t
 *(Development Build)* 
 
 ### 1. Main Menu
-<img width="1920" height="1080" alt="swappy-20250825-235242" src="https://github.com/user-attachments/assets/64158771-3816-4c88-9d39-33b811a45554" />
+<img width="1920" height="1080" alt="swappy-20250826-001601" src="https://github.com/user-attachments/assets/96993377-f606-43c3-b300-151db710cd07" />
+
 
 ### 2. Tasks Screen
 <img width="1920" height="1080" alt="swappy-20250825-235233" src="https://github.com/user-attachments/assets/b1bae624-cce0-42a6-a38c-a03921c2f662" />
@@ -29,7 +30,7 @@ Currently in development – core features like adding, updating, and removing t
 
 ```bash
 # Clone the repository
-git clone https://github.com/A-Knee09/Task-Manager-TUI.git
+git clone https://github.com/A-Knee09/To-do-TUI.git
 cd Task-Manager-TUI
 ```
 
