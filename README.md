@@ -1,5 +1,30 @@
+# Task List TUI (WIP)
+
+A terminal-based task management application built with [Textual](https://textual.textualize.io/).  
+Currently in development – core features like adding, updating, and removing tasks are functional, with more planned.
+
+## Features (So Far)
+- Add new tasks quickly  
+- Update existing tasks  
+- Remove tasks with a single key press  
+- Simple keyboard navigation  
+
+## Screenshots
+*(Development Build)* 
+
+### 1. Main Menu
+<img width="1920" height="1080" alt="swappy-20250825-235242" src="https://github.com/user-attachments/assets/64158771-3816-4c88-9d39-33b811a45554" />
+
+### 2. Tasks Screen
+<img width="1920" height="1080" alt="swappy-20250825-235233" src="https://github.com/user-attachments/assets/b1bae624-cce0-42a6-a38c-a03921c2f662" />
+
+### 3. About Me Screen
+<img width="1920" height="1080" alt="swappy-20250825-235251" src="https://github.com/user-attachments/assets/95b5361c-7b66-4604-8a87-4eda1f700410" />
+
+
+
 ## How to run
----
+
 ### Clone the Repository
 
 ```bash
